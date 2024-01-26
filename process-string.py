@@ -23,22 +23,23 @@
 # user_range = input("Enter a range of letters (e.g., a-z): ")
 
 # Application 1 
-def duplicate_string(str):
-    str = list(str)
-    for item in str:
-        print(2*item, end='')
-
-duplicate_string("hello world")
+str = input("Enter a string: ") # take user input
+str = list(str) # put the string in list
+# muliple all char by 2
+for item in str:
+    print(2*item, end='')
+    
+print("\n")
 
 # Application 2
-def letters_range(str):
-    result = ""
-    str = str.split("-")
-    start_ord = ord(str[0])
-    end_ord = ord(str[-1])
+user_range = input("Enter a range of letters (e.g., a-z): ")
+start, end = user_range.split('-') # split the letter into list
+start_ord = ord(start) # change the start char to ascii decimal
+end_ord = ord(end) # change the end char to ascii decimal
 
-    for i in range(start_ord,end_ord + 1):
-        result += chr(i)
-    print(result)
-
-letters_range("A-D")
+ # empty string to combine everything together
+result = ""
+# add all the char that has ascii decimal between the start_ord and the end_ord
+for i in range(start_ord,end_ord + 1):
+    result += chr(i)
+print(result)
