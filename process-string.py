@@ -18,7 +18,27 @@
 # Notes A hyphen will separate the two letters in the string.
 
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-start, end = alphabet.split('-')
-user_range = input("Enter a range of letters (e.g., a-z): ")
+# alphabet = "abcdefghijklmnopqrstuvwxyz"
+# start, end = alphabet.split('-')
+# user_range = input("Enter a range of letters (e.g., a-z): ")
 
+# Application 1 
+def duplicate_string(str):
+    str = list(str)
+    for item in str:
+        print(2*item, end='')
+
+duplicate_string("hello world")
+
+# Application 2
+def letters_range(str):
+    result = ""
+    str = str.split("-")
+    start_ord = ord(str[0])
+    end_ord = ord(str[-1])
+
+    for i in range(start_ord,end_ord + 1):
+        result += chr(i)
+    print(result)
+
+letters_range("A-D")
